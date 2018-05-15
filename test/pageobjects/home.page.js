@@ -7,13 +7,10 @@ var HomePage = Object.create(Page, {
      */
     usernameLabel: { get: function () { return browser.element('#userNavLabel'); } },
     
-    
 
-    /**
-     * define or overwrite page methods
-     */
-    open: { value: function() {
-        Page.open.call(this, 'home/home.jsp');
+    getUserNameLabelText: { value: function() {
+        this.usernameLabel.waitForVisible(50000);
+        return this.usernameLabel.getText()
     } },
 
    

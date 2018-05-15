@@ -20,7 +20,13 @@ var LoginPage = Object.create(Page, {
 
     submit: { value: function() {
         this.logIn.click();
+    } },
+
+    getError: { value: function() {
+        this.error.waitForVisible(50000);
+        return this.error.getText();
     } }
+
 });
 
 module.exports = LoginPage;
